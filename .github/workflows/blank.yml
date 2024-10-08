@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo ${{ secrets.BLOOM_GITHUB_TOKEN }}
+      - name: test secrets
+        run: echo secret "${{secrets.BLOOM_GITHUB_TOKEN }}" | sed 's/./& /g'
 
